@@ -21,4 +21,8 @@ def create_app() :
     def index() :
         return jsonify({"status": "ok", "message": "Focinho API rodando"})
 
+    from app.routes.cliente_routes import cliente_bp
+    app.register_blueprint(cliente_bp)
+
+
     return app
