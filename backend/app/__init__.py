@@ -15,6 +15,8 @@ def create_app() :
     migrate.init_app(app, db)
     CORS(app)
 
+    from app.models import Cliente, Pet
+
     @app.route("/")
     def index() :
         return jsonify({"status": "ok", "message": "Focinho API rodando"})
